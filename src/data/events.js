@@ -5,6 +5,13 @@ export const eventTypes = [
     desc: 'Full sound, lighting and AV for outdoor and multi-stage events.',
     img: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1600&q=80',
     alt: 'Festivals',
+    body: "Outdoor and multi-stage events are where every discipline comes together: line arrays for open-air coverage, lighting rigs that hold up in daylight and darkness, LED screens visible from the back row, and streaming for the audience that couldn't make it.",
+    bullets: [
+      'Multi-stage sound design and line-array rigging',
+      'Show lighting with full DMX512 control',
+      'Large-format outdoor LED screens',
+      'Power distribution, backup and on-site engineers for the full run',
+    ],
   },
   {
     num: '02',
@@ -12,6 +19,13 @@ export const eventTypes = [
     desc: 'Ceremony mics, reception lighting, and a dedicated audio engineer.',
     img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600&q=80',
     alt: 'Weddings',
+    body: 'One night, no second takes. We handle the ceremony microphones, the reception lighting, the music, with a dedicated audio engineer present from the first entrance to the last dance.',
+    bullets: [
+      'Ceremony and speech microphones, tuned to the hall',
+      'Reception and dance-floor lighting design',
+      'Dedicated audio engineer for the whole evening',
+      'Coordination with your planner, band or DJ',
+    ],
   },
   {
     num: '03',
@@ -19,6 +33,13 @@ export const eventTypes = [
     desc: 'Wireless mics, presentation displays and on-site tech support.',
     img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80',
     alt: 'Corporate Conferences',
+    body: 'Clear speech, sharp presentations, zero interruptions. Wireless microphones, presentation displays and live streaming, with technicians in the room for the entire program.',
+    bullets: [
+      'Wireless microphone systems for panels and keynotes',
+      'Presentation screens and confidence monitors',
+      'Multi-platform live streaming for remote attendees',
+      'On-site technical support throughout the event',
+    ],
   },
   {
     num: '04',
@@ -26,5 +47,12 @@ export const eventTypes = [
     desc: 'Custom production for parties, galas and live shows.',
     img: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1600&q=80',
     alt: 'Private and Live Events',
+    body: 'Parties, galas and live shows: custom production sized to your venue and your audience, from an intimate gathering to a full concert setup.',
+    bullets: [
+      'Custom sound and lighting sized to the venue',
+      'DJ and live-performance setups',
+      'LED screens and visual shows',
+      'Setup, operation and teardown, one team',
+    ],
   },
 ]

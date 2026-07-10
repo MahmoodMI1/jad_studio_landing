@@ -175,3 +175,16 @@
 .social-icon:hover {
   color: #fff;
 }
+
+.btn-modal-back {
+  background: var(--color-bg);
+  border: 2px solid var(--color-navy);
+  color: var(--color-navy);
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-modal-back:hover {
+  background: var(--color-navy);
+  color: #fff;
+}

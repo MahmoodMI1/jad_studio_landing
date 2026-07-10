@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import CTABand from '../components/CTABand'
+import DetailModal from '../components/DetailModal'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { eventTypes } from '../data/events'
 
@@ -19,6 +21,7 @@ const cardStyle = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-end',
+  cursor: 'pointer',
 }
 
 const cardImageStyle = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
@@ -47,6 +50,7 @@ const moreTextStyle = { marginTop: 20, fontSize: 13.5, fontWeight: 600, color: '
 
 function Events() {
   useScrollReveal()
+  const [activeIndex, setActiveIndex] = useState(-1)
 
   return (
     <div>
@@ -58,8 +62,21 @@ function Events() {
 
       <div className="container" style={gridSectionStyle}>
         <div style={gridStyle}>
-          {eventTypes.map((event) => (
-            <div key={event.num} className="jad-zoomcard jad-reveal" style={cardStyle}>
+          {eventTypes.map((event, index) => (
+            <div
+              key={event.num}
+              className="jad-zoomcard jad-reveal"
+              style={cardStyle}
+              role="button"
+              tabIndex={0}
+              onClick={() => setActiveIndex(index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setActiveIndex(index)
+                }
+              }}
+            >
               <img src={event.img} alt={event.alt} style={cardImageStyle} />
               <div style={cardOverlayStyle} />
               <div style={cardBodyStyle}>
@@ -72,6 +89,15 @@ function Events() {
         </div>
         <div style={moreTextStyle}>…and many more.</div>
       </div>
+
+      <DetailModal
+        variant="events"
+        item={activeIndex >= 0 ? eventTypes[activeIndex] : null}
+        label="EVENTS WE SERVICE"
+        ctaLabel="Plan this event with us →"
+        ctaHref="/contact"
+        onClose={() => setActiveIndex(-1)}
+      />
 
       <CTABand
         heading="Planning an event?"

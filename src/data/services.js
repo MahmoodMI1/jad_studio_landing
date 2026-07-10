@@ -6,6 +6,13 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80',
     alt: 'Professional Sound Systems',
+    body: 'Supply and installation of complete professional systems from JBL, Yamaha, Dynacord and Shure, engineered for pure, powerful audio at the most demanding occasions.',
+    bullets: [
+      'Amplifiers, mixers, speakers and wireless microphone systems',
+      "System design matched to your venue's acoustics",
+      'Calibration and soundcheck by our engineers',
+      'Buy or rent, with one-year company warranty',
+    ],
   },
   {
     num: '02',
@@ -14,6 +21,13 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80',
     alt: 'Professional Lighting',
+    body: 'Lighting solutions that add a distinctive visual atmosphere and give every event more impact and presence.',
+    bullets: [
+      'Controllers from Tiger Touch, Sunny, King and Quartz',
+      'Full DMX512 protocol for professional show control',
+      'Moving heads, LED fixtures, smoke and haze machines',
+      'Show programming and live operation',
+    ],
   },
   {
     num: '03',
@@ -22,6 +36,12 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=80',
     alt: 'LED Screens',
+    body: 'High-definition display screens that deliver your content and visual shows at the best quality in front of your audience.',
+    bullets: [
+      'Indoor and outdoor high-definition panels',
+      'Content and visual-show playback',
+      'Rigging, power and signal, handled end to end',
+    ],
   },
   {
     num: '04',
@@ -30,6 +50,12 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600&q=80',
     alt: 'Recording, Editing and Composing',
+    body: 'Professional composing and recording for all types of music, used across every field, with studio-grade editing and production.',
+    bullets: [
+      'Composing and arrangement for all music styles',
+      'Studio-grade recording and editing',
+      'Production for events, media and commercial use',
+    ],
   },
   {
     num: '05',
@@ -38,6 +64,12 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=1600&q=80',
     alt: 'Home Theater Systems',
+    body: 'Supply and installation of complete home theater systems, calibrated and tuned to your space.',
+    bullets: [
+      'System selection matched to your room and budget',
+      'Full installation and cabling',
+      'Calibration and tuning for your space',
+    ],
   },
   {
     num: '06',
@@ -46,6 +78,12 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80',
     alt: 'Digital Mixer Programming',
+    body: 'Programming the latest versions of digital audio mixers for venues, studios and touring rigs.',
+    bullets: [
+      'Latest digital mixer platforms',
+      'Scene and show programming',
+      'Training for your in-house operators',
+    ],
   },
   {
     num: '07',
@@ -54,6 +92,12 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=1600&q=80',
     alt: 'Multi-Platform Live Streaming',
+    body: 'Installation of live-stream devices broadcasting to multiple platforms at the same time, for conferences, concerts and ceremonies.',
+    bullets: [
+      'Simultaneous broadcast to multiple platforms',
+      'Camera, audio and encoder setup',
+      'On-site operation during your event',
+    ],
   },
   {
     num: '08',
@@ -62,5 +106,11 @@ export const services = [
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80',
     alt: 'Events and Conferences Production',
+    body: 'Complete technical setup and management for weddings, festivals, conferences and private events, from the beginning through execution.',
+    bullets: [
+      'Site survey and production plan',
+      'Sound, lighting, LED and streaming, one team',
+      'Engineers on site from setup to final soundcheck',
+    ],
   },
 ]

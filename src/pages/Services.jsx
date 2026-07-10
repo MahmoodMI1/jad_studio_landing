@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import CTABand from '../components/CTABand'
+import DetailModal from '../components/DetailModal'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { services } from '../data/services'
 
@@ -19,6 +21,7 @@ const cardBaseStyle = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-end',
+  cursor: 'pointer',
 }
 
 const cardImageStyle = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
@@ -101,14 +104,26 @@ const engineeringItems = [
   'Technical troubleshooting and live operation during events',
 ]
 
-function ServiceCard({ service }) {
+function ServiceCard({ service, onOpen }) {
   const isBlue = service.variant === 'blue'
   const isNavy = service.variant === 'navy'
   const background = isBlue ? 'var(--color-blue)' : isNavy ? 'var(--color-navy)' : undefined
   const overlayStyle = service.variant === 'image' ? imageOverlayStyle : isBlue ? blueOverlayStyle : navyOverlayStyle
 
   return (
-    <div className="jad-zoomcard jad-reveal" style={{ ...cardBaseStyle, background }}>
+    <div
+      className="jad-zoomcard jad-reveal"
+      style={{ ...cardBaseStyle, background }}
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          onOpen()
+        }
+      }}
+    >
       {service.variant === 'image' && <img src={service.img} alt={service.alt} style={cardImageStyle} />}
       <div style={overlayStyle} />
       <div style={cardBodyStyle}>
@@ -122,6 +137,7 @@ function ServiceCard({ service }) {
 
 function Services() {
   useScrollReveal()
+  const [activeIndex, setActiveIndex] = useState(-1)
 
   return (
     <div>
@@ -133,11 +149,20 @@ function Services() {
 
       <div className="container" style={listSectionStyle}>
         <div style={gridStyle}>
-          {services.map((service) => (
-            <ServiceCard key={service.num} service={service} />
+          {services.map((service, index) => (
+            <ServiceCard key={service.num} service={service} onOpen={() => setActiveIndex(index)} />
           ))}
         </div>
       </div>
+
+      <DetailModal
+        variant="services"
+        item={activeIndex >= 0 ? services[activeIndex] : null}
+        label="SERVICE"
+        ctaLabel="Request this service →"
+        ctaHref="/contact"
+        onClose={() => setActiveIndex(-1)}
+      />
 
       <div style={engineeringSectionStyle}>
         <div className="container" style={engineeringInnerStyle}>
