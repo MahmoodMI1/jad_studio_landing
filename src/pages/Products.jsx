@@ -55,8 +55,6 @@ const productNameStyle = { fontSize: 17, fontWeight: 700 }
 
 const productDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-text-muted)' }
 
-const productPriceStyle = { fontSize: 16, fontWeight: 800, color: 'var(--color-blue)', textAlign: 'right' }
-
 const lightingSectionStyle = { paddingBottom: 'clamp(48px,7vw,96px)' }
 
 const lightingImageWrapStyle = { border: '2px solid var(--color-navy)', borderTop: 'none', overflow: 'hidden', height: 280 }
@@ -120,7 +118,6 @@ function Products() {
           <div key={product.name} className="product-row" style={productRowStyle}>
             <div style={productNameStyle}>{product.name}</div>
             <div style={productDescStyle}>{product.desc}</div>
-            <div style={productPriceStyle}>{product.price}</div>
           </div>
         ))}
       </div>
