@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 function Layout() {
   const location = useLocation()
   const isHome = location.pathname === '/'
+  const [replayKey, setReplayKey] = useState(0)
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
@@ -18,8 +19,8 @@ function Layout() {
 
   return (
     <>
-      <NavBar />
-      <Outlet />
+      <NavBar onSameRouteClick={() => setReplayKey((key) => key + 1)} />
+      <Outlet key={`${location.pathname}-${replayKey}`} />
       <Footer bordered={isHome} />
     </>
   )
