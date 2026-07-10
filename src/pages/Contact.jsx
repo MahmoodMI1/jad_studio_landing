@@ -53,7 +53,7 @@ const sectionStyle = {
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))',
   gap: 'clamp(36px,5vw,72px)',
   alignItems: 'center',
-  paddingTop: 'clamp(40px,6vw,80px)',
+  paddingTop: 'clamp(24px,4vw,48px)',
   paddingBottom: 'clamp(48px,7vw,96px)',
 }
 
