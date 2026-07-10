@@ -1,8 +1,9 @@
 import CTABand from '../components/CTABand'
 import { soundProducts, lightingProducts } from '../data/products'
-import gearImg from '../assets/gear-showcase.jpg'
-import lightingImg from '../assets/lighting-rig.jpg'
-import speakers33Img from '../assets/speakers-33.jpg'
+
+const gearImg = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80'
+const lightingImg = 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1600&q=80'
+const speakers33Img = 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1600&q=80'
 
 const headerSectionStyle = {
   display: 'grid',

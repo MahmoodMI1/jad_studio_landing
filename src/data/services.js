@@ -1,17 +1,10 @@
-import soundImg from '../assets/sound-engineer.jpg'
-import lightingImg from '../assets/lighting-rig.jpg'
-import screenImg from '../assets/speakers-screen.jpg'
-import mixerImg from '../assets/mixer-live.jpg'
-import gearImg from '../assets/gear-showcase.jpg'
-import stageImg from '../assets/hero-stage.jpg'
-
 export const services = [
   {
     num: '01',
     title: 'Professional Sound Systems',
     desc: 'Supply and installation of JBL, Yamaha, Dynacord and Shure systems — amplifiers, mixers, speakers and wireless mics.',
     variant: 'image',
-    img: soundImg,
+    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80',
     alt: 'Professional Sound Systems',
   },
   {
@@ -19,7 +12,7 @@ export const services = [
     title: 'Professional Lighting',
     desc: 'Distinctive visual atmosphere with Tiger Touch, Sunny, King and Quartz controllers — full DMX512 show control.',
     variant: 'image',
-    img: lightingImg,
+    img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80',
     alt: 'Professional Lighting',
   },
   {
@@ -27,7 +20,7 @@ export const services = [
     title: 'LED Screens',
     desc: 'High-definition display screens that deliver your content at the best quality in front of your audience.',
     variant: 'image',
-    img: screenImg,
+    img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=80',
     alt: 'LED Screens',
   },
   {
@@ -35,35 +28,39 @@ export const services = [
     title: 'Recording, Editing & Composing',
     desc: 'Professional composing and recording for all types of music, across every field — with studio-grade editing.',
     variant: 'image',
-    img: mixerImg,
+    img: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600&q=80',
     alt: 'Recording, Editing and Composing',
   },
   {
     num: '05',
     title: 'Home Theater Systems',
     desc: 'Supply and installation of complete home theater systems, calibrated and tuned to your space.',
-    variant: 'blue',
+    variant: 'image',
+    img: 'https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=1600&q=80',
+    alt: 'Home Theater Systems',
   },
   {
     num: '06',
     title: 'Digital Mixer Programming',
     desc: 'Programming the latest versions of digital audio mixers for venues, studios and touring rigs.',
     variant: 'image',
-    img: gearImg,
+    img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80',
     alt: 'Digital Mixer Programming',
   },
   {
     num: '07',
     title: 'Multi-Platform Live Streaming',
     desc: 'Installation of live-stream devices broadcasting to multiple platforms at the same time.',
-    variant: 'navy',
+    variant: 'image',
+    img: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=1600&q=80',
+    alt: 'Multi-Platform Live Streaming',
   },
   {
     num: '08',
     title: 'Events & Conferences Production',
     desc: 'Complete technical setup and management for weddings, festivals, conferences and private events.',
     variant: 'image',
-    img: stageImg,
+    img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80',
     alt: 'Events and Conferences Production',
   },
 ]

@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
 import CTABand from '../components/CTABand'
 import { stats } from '../data/stats'
-import heroImg from '../assets/hero-stage.jpg'
-import soundImg from '../assets/mixer-live.jpg'
-import lightImg from '../assets/line-array.jpg'
-import visionImg from '../assets/speakers-screen.jpg'
+
+const heroImg = 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1600&q=80'
 
 const pillars = [
   {
@@ -12,7 +10,7 @@ const pillars = [
     line: 'SOUND',
     title: 'Professional Sound Systems',
     desc: 'Supply, installation and live operation of JBL, Yamaha, Dynacord and Shure systems — plus studio recording, editing and composing.',
-    img: soundImg,
+    img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80',
     alt: 'Professional Sound Systems',
   },
   {
@@ -20,7 +18,7 @@ const pillars = [
     line: 'LIGHT',
     title: 'Professional Lighting',
     desc: 'DMX512 show control, moving heads and lighting design that gives every event more impact and presence.',
-    img: lightImg,
+    img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80',
     alt: 'Professional Lighting',
   },
   {
@@ -28,7 +26,7 @@ const pillars = [
     line: 'VISION',
     title: 'LED Screens & Streaming',
     desc: 'High-definition LED screens and multi-platform live streaming — your content at the best quality in front of any audience.',
-    img: visionImg,
+    img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=80',
     alt: 'LED Screens and Streaming',
   },
 ]
