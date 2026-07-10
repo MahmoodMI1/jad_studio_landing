@@ -97,14 +97,23 @@ const mobileQuoteLinkStyle = {
   color: 'var(--color-blue)',
 }
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+}
+
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
 
+  const handleNavClick = () => {
+    closeMenu()
+    scrollToTop()
+  }
+
   return (
     <div style={navWrapStyle}>
-      <Link to="/" style={logoWrapStyle} onClick={closeMenu}>
+      <Link to="/" style={logoWrapStyle} onClick={handleNavClick}>
         <span style={logoMarkStyle}>JAD</span>
         <span style={logoSubStyle}>STUDIO L.L.C INTERNATIONAL</span>
       </Link>
@@ -116,11 +125,12 @@ function NavBar() {
             to={link.to}
             end={link.to === '/'}
             className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`}
+            onClick={scrollToTop}
           >
             {link.label}
           </NavLink>
         ))}
-        <Link to="/contact" className="btn-quote">
+        <Link to="/contact" className="btn-quote" onClick={scrollToTop}>
           Contact Us
         </Link>
       </div>
@@ -141,11 +151,11 @@ function NavBar() {
       {menuOpen && (
         <div className="jad-mob" style={mobileMenuStyle}>
           {NAV_LINKS.map((link) => (
-            <Link key={link.to} to={link.to} style={mobileLinkStyle} onClick={closeMenu}>
+            <Link key={link.to} to={link.to} style={mobileLinkStyle} onClick={handleNavClick}>
               {link.label}
             </Link>
           ))}
-          <Link to="/contact" style={mobileQuoteLinkStyle} onClick={closeMenu}>
+          <Link to="/contact" style={mobileQuoteLinkStyle} onClick={handleNavClick}>
             Contact Us →
           </Link>
         </div>
