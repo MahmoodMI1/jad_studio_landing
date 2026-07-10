@@ -121,7 +121,7 @@ function NavBar() {
           </NavLink>
         ))}
         <Link to="/contact" className="btn-quote">
-          Contact us
+          Contact Us
         </Link>
       </div>
 
@@ -146,7 +146,7 @@ function NavBar() {
             </Link>
           ))}
           <Link to="/contact" style={mobileQuoteLinkStyle} onClick={closeMenu}>
-            Contact us →
+            Contact Us →
           </Link>
         </div>
       )}

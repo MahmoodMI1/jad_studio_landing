@@ -137,3 +137,26 @@
 .product-row:hover {
   background: #fff;
 }
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--color-whatsapp);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.btn-whatsapp:hover {
+  background: var(--color-whatsapp-hover);
+  color: #fff;
+}
+
+.contact-value-link {
+  color: var(--color-navy);
+}
+.contact-value-link:hover {
+  color: var(--color-blue);
+}

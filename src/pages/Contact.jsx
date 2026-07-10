@@ -14,7 +14,7 @@ const sectionStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))',
   gap: 'clamp(36px,5vw,72px)',
-  alignItems: 'start',
+  alignItems: 'center',
   paddingTop: 'clamp(40px,6vw,80px)',
   paddingBottom: 'clamp(48px,7vw,96px)',
 }
@@ -30,19 +30,52 @@ const titleStyle = {
 
 const introStyle = { margin: '0 0 40px', fontSize: 15.5, lineHeight: 1.75, color: 'var(--color-text-muted)' }
 
-const infoListStyle = { display: 'flex', flexDirection: 'column', gap: 0, borderTop: '2px solid var(--color-navy)' }
+const cardsWrapStyle = { display: 'flex', flexDirection: 'column', gap: 18 }
 
-const infoRowStyle = {
+const contactCardStyle = {
+  border: '2px solid var(--color-navy)',
+  background: '#fff',
+  padding: '22px 24px',
   display: 'flex',
   justifyContent: 'space-between',
-  gap: 20,
-  padding: '18px 4px',
-  borderBottom: '1px solid rgba(16,28,61,.15)',
+  alignItems: 'center',
+  gap: 18,
+  flexWrap: 'wrap',
 }
 
-const infoLabelStyle = { fontSize: 12, fontWeight: 700, letterSpacing: 1.5, color: 'var(--color-text-muted-2)' }
+const contactCardLabelColStyle = { display: 'flex', flexDirection: 'column', gap: 5 }
 
-const infoValueStyle = { fontSize: 14.5, fontWeight: 600 }
+const contactCardLabelStyle = { fontSize: 10.5, fontWeight: 800, letterSpacing: 2, color: 'var(--color-blue)' }
+
+const contactCardPhoneStyle = { fontSize: 18, fontWeight: 700 }
+
+const emailCardStyle = { ...contactCardStyle, flexDirection: 'column', alignItems: 'flex-start', gap: 5 }
+
+const emailLinkStyle = { fontSize: 18, fontWeight: 700, overflowWrap: 'anywhere' }
+
+const locationsCardStyle = {
+  border: '2px solid var(--color-navy)',
+  background: 'var(--color-navy)',
+  color: '#fff',
+  padding: '22px 24px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 14,
+}
+
+const locationsLabelStyle = { fontSize: 10.5, fontWeight: 800, letterSpacing: 2, color: 'var(--color-blue-accent)' }
+
+const locationRowStyle = { display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }
+
+const locationDividerStyle = { height: 1, background: 'rgba(255,255,255,.15)' }
+
+const locationPrimaryStyle = { fontSize: 16, fontWeight: 700 }
+
+const locationSecondaryStyle = { fontSize: 16, fontWeight: 700, color: 'var(--color-text-on-dark-muted)' }
+
+const statusOpenStyle = { fontSize: 11.5, fontWeight: 700, letterSpacing: 1, color: 'var(--color-open)' }
+
+const statusComingSoonStyle = { fontSize: 11.5, fontWeight: 700, letterSpacing: 1, color: 'var(--color-blue-accent)' }
 
 const formCardStyle = { border: '2px solid var(--color-navy)', background: '#fff', padding: 'clamp(22px,4vw,40px)' }
 
@@ -150,28 +183,49 @@ function Contact() {
         <p style={introStyle}>
           A quote, a site visit, or a full production plan — we'll get back to you within one business day.
         </p>
-        <div style={infoListStyle}>
-          <div style={infoRowStyle}>
-            <span style={infoLabelStyle}>UAE</span>
-            <a href="tel:+971509941041" style={infoValueStyle}>
-              +971 50 994 1041
+        <div style={cardsWrapStyle}>
+          <div style={contactCardStyle}>
+            <div style={contactCardLabelColStyle}>
+              <div style={contactCardLabelStyle}>AJMAN, UAE</div>
+              <a href="tel:+971509941041" className="contact-value-link" style={contactCardPhoneStyle}>
+                +971 50 994 1041
+              </a>
+            </div>
+            <a href="https://wa.me/971509941041" className="btn-whatsapp">
+              WhatsApp
             </a>
           </div>
-          <div style={infoRowStyle}>
-            <span style={infoLabelStyle}>SYRIA</span>
-            <a href="tel:+963994396457" style={infoValueStyle}>
-              +963 994 396 457
+
+          <div style={contactCardStyle}>
+            <div style={contactCardLabelColStyle}>
+              <div style={contactCardLabelStyle}>SYRIA</div>
+              <a href="tel:+963994396457" className="contact-value-link" style={contactCardPhoneStyle}>
+                +963 994 396 457
+              </a>
+            </div>
+            <a href="https://wa.me/963994396457" className="btn-whatsapp">
+              WhatsApp
             </a>
           </div>
-          <div style={infoRowStyle}>
-            <span style={infoLabelStyle}>EMAIL</span>
-            <a href="mailto:orabi_65@hotmail.com" style={infoValueStyle}>
+
+          <div style={emailCardStyle}>
+            <div style={contactCardLabelStyle}>EMAIL</div>
+            <a href="mailto:orabi_65@hotmail.com" className="contact-value-link" style={emailLinkStyle}>
               orabi_65@hotmail.com
             </a>
           </div>
-          <div style={infoRowStyle}>
-            <span style={infoLabelStyle}>LOCATION</span>
-            <span style={infoValueStyle}>Ajman, United Arab Emirates</span>
+
+          <div style={locationsCardStyle}>
+            <div style={locationsLabelStyle}>LOCATIONS</div>
+            <div style={locationRowStyle}>
+              <span style={locationPrimaryStyle}>Ajman, United Arab Emirates</span>
+              <span style={statusOpenStyle}>OPEN</span>
+            </div>
+            <div style={locationDividerStyle} />
+            <div style={locationRowStyle}>
+              <span style={locationSecondaryStyle}>Aleppo, Syria</span>
+              <span style={statusComingSoonStyle}>COMING SOON</span>
+            </div>
           </div>
         </div>
       </div>
