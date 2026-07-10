@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import EqualizerBars from './EqualizerBars'
 
 const lightInnerStyle = {
   display: 'flex',
@@ -31,11 +32,12 @@ const darkInnerStyle = {
   paddingBottom: 'clamp(40px,6vw,72px)',
 }
 
+const darkHeadingGroupStyle = { display: 'flex', flexDirection: 'column', gap: 18, maxWidth: 520 }
+
 const darkHeadingStyle = {
   fontSize: 30,
   fontWeight: 800,
   letterSpacing: '-.5px',
-  maxWidth: 520,
   textWrap: 'balance',
 }
 
@@ -58,12 +60,15 @@ function CTAButton({ href, className, children }) {
   )
 }
 
-function CTABand({ variant = 'light', heading, accent, primary, secondary }) {
+function CTABand({ variant = 'light', heading, accent, primary, secondary, showEqualizer = false }) {
   if (variant === 'dark') {
     return (
       <div style={darkWrapStyle}>
         <div className="container" style={darkInnerStyle}>
-          <div style={darkHeadingStyle}>{heading}</div>
+          <div style={darkHeadingGroupStyle}>
+            {showEqualizer && <EqualizerBars color="var(--color-blue-accent)" />}
+            <div style={darkHeadingStyle}>{heading}</div>
+          </div>
           <div style={actionsStyle}>
             <CTAButton href={primary.href} className="btn-blue-sm">
               {primary.label}

@@ -1,5 +1,6 @@
 import SectionHeader from '../components/SectionHeader'
 import CTABand from '../components/CTABand'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { eventTypes } from '../data/events'
 
 const gridSectionStyle = { paddingBottom: 'clamp(40px,6vw,72px)' }
@@ -45,6 +46,8 @@ const cardDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-tex
 const moreTextStyle = { marginTop: 20, fontSize: 13.5, fontWeight: 600, color: 'var(--color-text-muted-2)' }
 
 function Events() {
+  useScrollReveal()
+
   return (
     <div>
       <SectionHeader
@@ -56,7 +59,7 @@ function Events() {
       <div className="container" style={gridSectionStyle}>
         <div style={gridStyle}>
           {eventTypes.map((event) => (
-            <div key={event.num} style={cardStyle}>
+            <div key={event.num} className="jad-zoomcard jad-reveal" style={cardStyle}>
               <img src={event.img} alt={event.alt} style={cardImageStyle} />
               <div style={cardOverlayStyle} />
               <div style={cardBodyStyle}>

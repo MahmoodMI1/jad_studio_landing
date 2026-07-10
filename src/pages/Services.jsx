@@ -1,5 +1,6 @@
 import SectionHeader from '../components/SectionHeader'
 import CTABand from '../components/CTABand'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { services } from '../data/services'
 
 const listSectionStyle = { paddingBottom: 'clamp(48px,7vw,96px)' }
@@ -107,7 +108,7 @@ function ServiceCard({ service }) {
   const overlayStyle = service.variant === 'image' ? imageOverlayStyle : isBlue ? blueOverlayStyle : navyOverlayStyle
 
   return (
-    <div style={{ ...cardBaseStyle, background }}>
+    <div className="jad-zoomcard jad-reveal" style={{ ...cardBaseStyle, background }}>
       {service.variant === 'image' && <img src={service.img} alt={service.alt} style={cardImageStyle} />}
       <div style={overlayStyle} />
       <div style={cardBodyStyle}>
@@ -120,6 +121,8 @@ function ServiceCard({ service }) {
 }
 
 function Services() {
+  useScrollReveal()
+
   return (
     <div>
       <SectionHeader

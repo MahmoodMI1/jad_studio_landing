@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../emailjsConfig'
 
 const TOPICS = [
@@ -186,6 +187,8 @@ const errorTextStyle = { fontSize: 13, fontWeight: 600, color: 'var(--color-erro
 const fieldErrorTextStyle = { fontSize: 12, fontWeight: 600, color: 'var(--color-error)' }
 
 function Contact() {
+  useScrollReveal()
+
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
@@ -254,7 +257,7 @@ function Contact() {
           A quote, a site visit, or a full production plan — we'll get back to you within one business day.
         </p>
         <div style={cardsWrapStyle}>
-          <div style={contactCardStyle}>
+          <div className="jad-lift" style={contactCardStyle}>
             <div style={contactCardLabelColStyle}>
               <div style={contactCardLabelStyle}>AJMAN, UAE</div>
               <a href="tel:+971509941041" className="contact-value-link" style={contactCardPhoneStyle}>
@@ -266,7 +269,7 @@ function Contact() {
             </a>
           </div>
 
-          <div style={contactCardStyle}>
+          <div className="jad-lift" style={contactCardStyle}>
             <div style={contactCardLabelColStyle}>
               <div style={contactCardLabelStyle}>SYRIA</div>
               <a href="tel:+963994396457" className="contact-value-link" style={contactCardPhoneStyle}>
@@ -278,14 +281,14 @@ function Contact() {
             </a>
           </div>
 
-          <div style={emailCardStyle}>
+          <div className="jad-lift" style={emailCardStyle}>
             <div style={contactCardLabelStyle}>EMAIL</div>
             <a href="mailto:orabi_65@hotmail.com" className="contact-value-link" style={emailLinkStyle}>
               orabi_65@hotmail.com
             </a>
           </div>
 
-          <div style={locationsCardStyle}>
+          <div className="jad-lift" style={locationsCardStyle}>
             <div style={locationsLabelStyle}>LOCATIONS</div>
             <div style={locationRowStyle}>
               <span style={locationPrimaryStyle}>Ajman, United Arab Emirates</span>
@@ -300,7 +303,7 @@ function Contact() {
         </div>
       </div>
 
-      <div style={formCardStyle}>
+      <div className="jad-reveal" style={formCardStyle}>
         {sent ? (
           <div style={successWrapStyle}>
             <div style={checkIconStyle}>✓</div>

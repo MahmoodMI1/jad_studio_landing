@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import CTABand from '../components/CTABand'
+import EqualizerBars from '../components/EqualizerBars'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { stats } from '../data/stats'
 
 const heroImg = 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1600&q=80'
@@ -171,9 +173,12 @@ const pillarTitleStyle = { fontSize: 19, fontWeight: 700 }
 const pillarDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-text-muted)' }
 
 function Home() {
+  useScrollReveal()
+
   return (
     <div>
-      <div className="container" style={heroWrapStyle}>
+      <div className="container jad-reveal" style={heroWrapStyle}>
+        <EqualizerBars color="var(--color-blue)" marginBottom={22} />
         <div className="eyebrow" style={eyebrowStyle}>AUDIO • VISUAL • LIGHTING — SALES, RENTAL &amp; ENGINEERING</div>
         <h1 style={titleStyle}>
           Thirty-three years of making events <span style={accentStyle}>unforgettable.</span>
@@ -217,7 +222,9 @@ function Home() {
         <div className="jad-desk container" style={statsDesktopGridStyle}>
           {stats.map((stat) => (
             <div key={stat.label} style={statItemStyle}>
-              <div style={statValueStyle}>{stat.value}</div>
+              <div style={statValueStyle} data-count={stat.num} data-suffix={stat.suffix}>
+                {stat.value}
+              </div>
               <div style={statLabelStyle}>{stat.label}</div>
             </div>
           ))}
@@ -243,7 +250,7 @@ function Home() {
         </div>
         <div className="jad-hrow" style={pillarsGridStyle}>
           {pillars.map((pillar) => (
-            <div key={pillar.num} className="jad-hcard" style={pillarCardStyle}>
+            <div key={pillar.num} className="jad-hcard jad-zoomcard jad-reveal" style={pillarCardStyle}>
               <div style={pillarImageWrapStyle}>
                 <img src={pillar.img} alt={pillar.alt} style={pillarImageStyle} />
               </div>
@@ -261,6 +268,7 @@ function Home() {
 
       <CTABand
         variant="dark"
+        showEqualizer
         heading="Ready to deliver your event at the best level."
         primary={{ href: 'tel:+971509941041', label: 'Call +971 50 994 1041' }}
         secondary={{ href: '/contact', label: 'Request a quote' }}

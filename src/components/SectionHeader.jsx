@@ -23,7 +23,7 @@ const descriptionStyle = {
 
 function SectionHeader({ eyebrow, title, description, titleSize, titleMaxWidth, descriptionMaxWidth }) {
   return (
-    <div className="container" style={wrapStyle}>
+    <div className="container jad-reveal" style={wrapStyle}>
       <div className="eyebrow">{eyebrow}</div>
       <h1
         style={{

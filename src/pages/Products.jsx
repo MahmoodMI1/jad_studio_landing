@@ -1,4 +1,5 @@
 import CTABand from '../components/CTABand'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { soundProducts, lightingProducts } from '../data/products'
 
 const gearImg = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80'
@@ -93,9 +94,11 @@ const warrantyAccentStyle = { color: 'var(--color-blue-accent)' }
 const warrantyTextStyle = { fontSize: 14, lineHeight: 1.8, color: 'var(--color-text-on-dark-muted)' }
 
 function Products() {
+  useScrollReveal()
+
   return (
     <div>
-      <div className="container" style={headerSectionStyle}>
+      <div className="container jad-reveal" style={headerSectionStyle}>
         <div>
           <div className="eyebrow">OUR PRODUCTS — BUY OR RENT</div>
           <h1 style={headerTitleStyle}>Trusted brands, company warranty.</h1>
@@ -133,7 +136,7 @@ function Products() {
         </div>
         <div style={lightingGridStyle}>
           {lightingProducts.map((item) => (
-            <div key={item.name} style={lightingCardStyle}>
+            <div key={item.name} className="jad-lift jad-reveal" style={lightingCardStyle}>
               <div style={lightingNameStyle}>{item.name}</div>
               <div style={lightingDescStyle}>{item.desc}</div>
             </div>
