@@ -11,7 +11,7 @@ const pillars = [
     num: '01',
     line: 'SOUND',
     title: 'Professional Sound Systems',
-    desc: 'Supply, installation and live operation of JBL, Yamaha, Dynacord and Shure systems — plus studio recording, editing and composing.',
+    desc: 'Supply, installation and live operation of JBL, Yamaha, Dynacord and Shure systems, plus studio recording, editing and composing.',
     img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80',
     alt: 'Professional Sound Systems',
   },
@@ -27,14 +27,39 @@ const pillars = [
     num: '03',
     line: 'VISION',
     title: 'LED Screens & Streaming',
-    desc: 'High-definition LED screens and multi-platform live streaming — your content at the best quality in front of any audience.',
+    desc: 'High-definition LED screens and multi-platform live streaming, delivering your content at the best quality in front of any audience.',
     img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=80',
     alt: 'LED Screens and Streaming',
   },
 ]
 
+const eventsTeaserImg = 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1600&q=80'
+
+const productBrands = [
+  {
+    name: 'JBL',
+    category: 'SPEAKERS & SUBS',
+    desc: 'SRX series, two-way stereo speakers and subwoofers, 500 to 1200 W.',
+  },
+  {
+    name: 'Yamaha',
+    category: 'AMPLIFIERS',
+    desc: 'P5000s high-load amplifiers: 3000 W and 5000 W versions.',
+  },
+  {
+    name: 'Shure',
+    category: 'MICROPHONES',
+    desc: 'AXT500 wireless systems, SM58 vocal mics, instrument mics.',
+  },
+  {
+    name: 'Dynacord',
+    category: 'MIXERS',
+    desc: 'CM series, 10 to 34 channels, made in Germany.',
+  },
+]
+
 const heroWrapStyle = {
-  paddingTop: 'clamp(44px,7vw,88px)',
+  paddingTop: 'clamp(24px,4vw,48px)',
   paddingBottom: 'clamp(36px,5vw,64px)',
 }
 
@@ -172,6 +197,124 @@ const pillarTitleStyle = { fontSize: 19, fontWeight: 700 }
 
 const pillarDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-text-muted)' }
 
+const eventsTeaserSectionStyle = {
+  background: 'var(--color-navy)',
+  borderTop: '2px solid var(--color-navy)',
+  borderBottom: '2px solid var(--color-navy)',
+  color: '#fff',
+}
+
+const eventsTeaserInnerStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,320px),1fr))',
+  gap: 'clamp(32px,5vw,64px)',
+  alignItems: 'center',
+  paddingTop: 'clamp(48px,7vw,80px)',
+  paddingBottom: 'clamp(48px,7vw,80px)',
+}
+
+const eventsTeaserEyebrowStyle = {
+  fontSize: 12,
+  fontWeight: 700,
+  letterSpacing: 2.5,
+  color: 'var(--color-blue-accent)',
+  marginBottom: 16,
+}
+
+const eventsTeaserHeadingStyle = {
+  margin: '0 0 18px',
+  fontSize: 'clamp(26px,4vw,40px)',
+  fontWeight: 800,
+  lineHeight: 1.15,
+  letterSpacing: '-1px',
+  textWrap: 'balance',
+}
+
+const eventsTeaserAccentStyle = { color: 'var(--color-blue-accent)' }
+
+const eventsTeaserTextStyle = {
+  margin: '0 0 28px',
+  fontSize: 15,
+  lineHeight: 1.75,
+  color: 'var(--color-text-on-dark-muted)',
+  maxWidth: 440,
+}
+
+const eventsTeaserCardStyle = {
+  position: 'relative',
+  border: '2px solid rgba(255,255,255,.25)',
+  minHeight: 340,
+  overflow: 'hidden',
+  display: 'block',
+}
+
+const eventsTeaserImgStyle = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+
+const eventsTeaserOverlayStyle = {
+  position: 'absolute',
+  inset: 0,
+  background: 'linear-gradient(0deg, rgba(9,16,38,.85) 0%, transparent 55%)',
+}
+
+const eventsTeaserLabelStyle = {
+  position: 'absolute',
+  left: 20,
+  bottom: 18,
+  fontSize: 13,
+  fontWeight: 700,
+  letterSpacing: 1.5,
+  color: '#fff',
+}
+
+const productsTeaserSectionStyle = {
+  paddingTop: 'clamp(48px,7vw,80px)',
+  paddingBottom: 'clamp(48px,7vw,80px)',
+}
+
+const productsTeaserHeaderStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'baseline',
+  gap: 24,
+  flexWrap: 'wrap',
+  marginBottom: 36,
+}
+
+const productsTeaserEyebrowStyle = { fontSize: 12, fontWeight: 700, letterSpacing: 2.5, color: 'var(--color-blue)' }
+
+const productsTeaserHeadingStyle = {
+  margin: 0,
+  fontSize: 'clamp(26px,4vw,36px)',
+  fontWeight: 800,
+  letterSpacing: '-1px',
+}
+
+const productsTeaserLinkStyle = { fontSize: 13.5, fontWeight: 700, color: 'var(--color-blue)', whiteSpace: 'nowrap' }
+
+const productsTeaserGridStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))',
+  gap: 22,
+}
+
+const productBrandCardStyle = {
+  border: '2px solid var(--color-navy)',
+  background: '#fff',
+  padding: '26px 24px 28px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 10,
+  color: 'var(--color-navy)',
+}
+
+const productBrandNameStyle = { fontSize: 26, fontWeight: 800, letterSpacing: '-.5px' }
+
+const productBrandCategoryStyle = { fontSize: 12, fontWeight: 700, letterSpacing: 1.5, color: 'var(--color-blue)' }
+
+const productBrandDescStyle = { fontSize: 13, lineHeight: 1.65, color: 'var(--color-text-muted)' }
+
+const productsTeaserNoteStyle = { marginTop: 24, fontSize: 13, fontWeight: 600, color: 'var(--color-text-muted-2)' }
+
 function Home() {
   useScrollReveal()
 
@@ -179,13 +322,13 @@ function Home() {
     <div>
       <div className="container jad-reveal" style={heroWrapStyle}>
         <EqualizerBars color="var(--color-blue)" marginBottom={22} />
-        <div className="eyebrow" style={eyebrowStyle}>AUDIO • VISUAL • LIGHTING — SALES, RENTAL &amp; ENGINEERING</div>
+        <div className="eyebrow" style={eyebrowStyle}>AUDIO • VISUAL • LIGHTING • SALES, RENTAL &amp; ENGINEERING</div>
         <h1 style={titleStyle}>
           Thirty-three years of making events <span style={accentStyle}>unforgettable.</span>
         </h1>
         <div style={heroBottomRowStyle}>
           <p style={heroParagraphStyle}>
-            From the UAE to Aleppo — supply, installation, programming and live operation. Buy the gear, rent the
+            From the UAE to Aleppo: supply, installation, programming and live operation. Buy the gear, rent the
             gear, hire the experts. One company, one solution.
           </p>
           <div style={heroButtonsStyle}>
@@ -208,7 +351,7 @@ function Home() {
             <div style={whyHeadingStyle}>One weak detail can change the whole event experience.</div>
             <div style={whyTextStyle}>
               Any error in the sound. Any weakness in the lighting. Any unclear screen. That's why we care about
-              every detail — clear balanced sound, professional lighting, high-definition LED, and an experience
+              every detail: clear balanced sound, professional lighting, high-definition LED, and an experience
               that stays in memory.
             </div>
             <Link to="/services" className="link-on-blue" style={whyLinkStyle}>
@@ -263,6 +406,58 @@ function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div style={eventsTeaserSectionStyle}>
+        <div className="container" style={eventsTeaserInnerStyle}>
+          <div className="jad-reveal">
+            <div style={eventsTeaserEyebrowStyle}>EVENTS WE SERVICE</div>
+            <h2 style={eventsTeaserHeadingStyle}>
+              We do weddings, festivals, conferences, <span style={eventsTeaserAccentStyle}>and much more.</span>
+            </h2>
+            <p style={eventsTeaserTextStyle}>
+              From a ballroom ceremony to a multi-stage festival: full sound, lighting and AV, from first site visit
+              to the final soundcheck.
+            </p>
+            <Link to="/events" className="btn-blue-sm" style={{ fontWeight: 700 }}>
+              See the events we service →
+            </Link>
+          </div>
+          <Link to="/events" className="jad-zoomcard jad-reveal" style={eventsTeaserCardStyle}>
+            <img src={eventsTeaserImg} alt="Festival stage production" style={eventsTeaserImgStyle} />
+            <div style={eventsTeaserOverlayStyle} />
+            <div style={eventsTeaserLabelStyle}>SEE OUR EVENTS →</div>
+          </Link>
+        </div>
+      </div>
+
+      <div className="container" style={productsTeaserSectionStyle}>
+        <div className="jad-reveal" style={productsTeaserHeaderStyle}>
+          <div>
+            <div style={productsTeaserEyebrowStyle}>OUR PRODUCTS: BUY OR RENT</div>
+            <h2 style={productsTeaserHeadingStyle}>The gear behind the sound.</h2>
+          </div>
+          <Link to="/products" style={productsTeaserLinkStyle}>
+            Browse all products →
+          </Link>
+        </div>
+        <div className="jad-hrow" style={productsTeaserGridStyle}>
+          {productBrands.map((brand) => (
+            <Link
+              key={brand.name}
+              to="/products"
+              className="jad-hcard jad-lift jad-reveal"
+              style={productBrandCardStyle}
+            >
+              <div style={productBrandNameStyle}>{brand.name}</div>
+              <div style={productBrandCategoryStyle}>{brand.category}</div>
+              <div style={productBrandDescStyle}>{brand.desc}</div>
+            </Link>
+          ))}
+        </div>
+        <div className="jad-reveal" style={productsTeaserNoteStyle}>
+          Every device carries a one-year company warranty · annual maintenance contracts available
         </div>
       </div>
 
