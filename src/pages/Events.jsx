@@ -2,11 +2,7 @@ import SectionHeader from '../components/SectionHeader'
 import CTABand from '../components/CTABand'
 import { eventTypes } from '../data/events'
 
-const gridSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '0 clamp(20px,4vw,48px) clamp(40px,6vw,72px)',
-}
+const gridSectionStyle = { paddingBottom: 'clamp(40px,6vw,72px)' }
 
 const gridStyle = {
   display: 'grid',
@@ -57,7 +53,7 @@ function Events() {
         description="We've installed lighting and audio systems for restaurants, wedding venues, concert stages, corporate spaces and private events — delivering professional sound and immersive lighting every time."
       />
 
-      <div style={gridSectionStyle}>
+      <div className="container" style={gridSectionStyle}>
         <div style={gridStyle}>
           {eventTypes.map((event) => (
             <div key={event.num} style={cardStyle}>

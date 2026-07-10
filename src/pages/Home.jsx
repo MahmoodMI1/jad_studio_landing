@@ -34,18 +34,11 @@ const pillars = [
 ]
 
 const heroWrapStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(44px,7vw,88px) clamp(20px,4vw,48px) clamp(36px,5vw,64px)',
+  paddingTop: 'clamp(44px,7vw,88px)',
+  paddingBottom: 'clamp(36px,5vw,64px)',
 }
 
-const eyebrowStyle = {
-  fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: 3,
-  color: 'var(--color-blue)',
-  marginBottom: 22,
-}
+const eyebrowStyle = { marginBottom: 22 }
 
 const titleStyle = {
   margin: '0 0 34px',
@@ -71,30 +64,7 @@ const heroParagraphStyle = {
 
 const heroButtonsStyle = { display: 'flex', gap: 14 }
 
-const primaryButtonStyle = {
-  display: 'inline-block',
-  padding: '16px 34px',
-  background: 'var(--color-navy)',
-  color: '#fff',
-  fontSize: 14.5,
-  fontWeight: 600,
-}
-
-const secondaryButtonStyle = {
-  display: 'inline-block',
-  padding: '16px 34px',
-  border: '2px solid var(--color-navy)',
-  color: 'var(--color-navy)',
-  fontSize: 14.5,
-  fontWeight: 600,
-  whiteSpace: 'nowrap',
-}
-
-const heroImageSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '0 clamp(20px,4vw,48px) clamp(48px,7vw,96px)',
-}
+const heroImageSectionStyle = { paddingBottom: 'clamp(48px,7vw,96px)' }
 
 const heroImageGridStyle = {
   display: 'grid',
@@ -122,7 +92,7 @@ const whyHeadingStyle = { fontSize: 24, fontWeight: 700, lineHeight: 1.35, textW
 
 const whyTextStyle = { fontSize: 14.5, lineHeight: 1.8, color: 'var(--color-blue-light)' }
 
-const whyLinkStyle = { fontSize: 13, fontWeight: 700, letterSpacing: 2, color: '#fff' }
+const whyLinkStyle = { fontSize: 13, fontWeight: 700, letterSpacing: 2 }
 
 const statsSectionStyle = {
   borderTop: '2px solid var(--color-navy)',
@@ -131,9 +101,6 @@ const statsSectionStyle = {
 }
 
 const statsDesktopGridStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '0 clamp(20px,4vw,48px)',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))',
 }
@@ -168,9 +135,8 @@ const marqueeLabelStyle = {
 }
 
 const pillarsSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(48px,7vw,96px) clamp(20px,4vw,48px)',
+  paddingTop: 'clamp(48px,7vw,96px)',
+  paddingBottom: 'clamp(48px,7vw,96px)',
 }
 
 const pillarsHeaderStyle = {
@@ -209,8 +175,8 @@ const pillarDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-t
 function Home() {
   return (
     <div>
-      <div style={heroWrapStyle}>
-        <div style={eyebrowStyle}>AUDIO • VISUAL • LIGHTING — SALES, RENTAL &amp; ENGINEERING</div>
+      <div className="container" style={heroWrapStyle}>
+        <div className="eyebrow" style={eyebrowStyle}>AUDIO • VISUAL • LIGHTING — SALES, RENTAL &amp; ENGINEERING</div>
         <h1 style={titleStyle}>
           Thirty-three years of making events <span style={accentStyle}>unforgettable.</span>
         </h1>
@@ -220,17 +186,17 @@ function Home() {
             gear, hire the experts. One company, one solution.
           </p>
           <div style={heroButtonsStyle}>
-            <Link to="/contact" style={primaryButtonStyle}>
+            <Link to="/contact" className="btn-navy">
               Start a project →
             </Link>
-            <Link to="/services" style={secondaryButtonStyle}>
+            <Link to="/services" className="btn-outline-navy">
               Our services
             </Link>
           </div>
         </div>
       </div>
 
-      <div style={heroImageSectionStyle}>
+      <div className="container" style={heroImageSectionStyle}>
         <div style={heroImageGridStyle}>
           <div style={heroImageWrapStyle}>
             <img src={heroImg} alt="JAD Studio ballroom event production" style={heroImageStyle} />
@@ -242,7 +208,7 @@ function Home() {
               every detail — clear balanced sound, professional lighting, high-definition LED, and an experience
               that stays in memory.
             </div>
-            <Link to="/services" style={whyLinkStyle}>
+            <Link to="/services" className="link-on-blue" style={whyLinkStyle}>
               WHY JAD →
             </Link>
           </div>
@@ -250,7 +216,7 @@ function Home() {
       </div>
 
       <div style={statsSectionStyle}>
-        <div className="jad-desk" style={statsDesktopGridStyle}>
+        <div className="jad-desk container" style={statsDesktopGridStyle}>
           {stats.map((stat) => (
             <div key={stat.label} style={statItemStyle}>
               <div style={statValueStyle}>{stat.value}</div>
@@ -270,7 +236,7 @@ function Home() {
         </div>
       </div>
 
-      <div style={pillarsSectionStyle}>
+      <div className="container" style={pillarsSectionStyle}>
         <div style={pillarsHeaderStyle}>
           <h2 style={pillarsHeadingStyle}>Sound. Light. Vision.</h2>
           <Link to="/services" style={pillarsLinkStyle}>

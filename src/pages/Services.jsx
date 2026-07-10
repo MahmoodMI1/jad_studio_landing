@@ -2,11 +2,7 @@ import SectionHeader from '../components/SectionHeader'
 import CTABand from '../components/CTABand'
 import { services } from '../data/services'
 
-const listSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '0 clamp(20px,4vw,48px) clamp(48px,7vw,96px)',
-}
+const listSectionStyle = { paddingBottom: 'clamp(48px,7vw,96px)' }
 
 const gridStyle = {
   display: 'grid',
@@ -61,13 +57,12 @@ const descAltStyle = { fontSize: 13, lineHeight: 1.65, color: 'var(--color-blue-
 const engineeringSectionStyle = { background: 'var(--color-blue)', color: '#fff' }
 
 const engineeringInnerStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(40px,6vw,72px) clamp(20px,4vw,48px)',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,320px),1fr))',
   gap: 'clamp(28px,4vw,56px)',
   alignItems: 'center',
+  paddingTop: 'clamp(40px,6vw,72px)',
+  paddingBottom: 'clamp(40px,6vw,72px)',
 }
 
 const engineeringEyebrowStyle = {
@@ -133,7 +128,7 @@ function Services() {
         description="From first site survey to the final soundcheck — supply, installation, programming and live operation. If we don't have it, we'll source it for you."
       />
 
-      <div style={listSectionStyle}>
+      <div className="container" style={listSectionStyle}>
         <div style={gridStyle}>
           {services.map((service) => (
             <ServiceCard key={service.num} service={service} />
@@ -142,7 +137,7 @@ function Services() {
       </div>
 
       <div style={engineeringSectionStyle}>
-        <div style={engineeringInnerStyle}>
+        <div className="container" style={engineeringInnerStyle}>
           <div>
             <div style={engineeringEyebrowStyle}>ENGINEERING SERVICES</div>
             <div style={engineeringHeadingStyle}>On-site engineers, not just equipment.</div>

@@ -9,15 +9,14 @@ const borderedWrapStyle = {
 }
 
 const innerStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '20px clamp(20px,4vw,48px)',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   gap: 20,
   flexWrap: 'wrap',
   fontSize: 12,
+  paddingTop: 20,
+  paddingBottom: 20,
 }
 
 const contactsStyle = {
@@ -29,7 +28,7 @@ const contactsStyle = {
 function Footer({ bordered = false }) {
   return (
     <div style={bordered ? borderedWrapStyle : wrapStyle}>
-      <div style={innerStyle}>
+      <div className="container" style={innerStyle}>
         <div style={contactsStyle}>
           <span>+971 50 994 1041</span>
           <span>+963 994 396 457</span>

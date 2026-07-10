@@ -5,21 +5,12 @@ import lightingImg from '../assets/lighting-rig.jpg'
 import speakers33Img from '../assets/speakers-33.jpg'
 
 const headerSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(32px,4vw,56px)',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))',
   gap: 'clamp(28px,4vw,56px)',
   alignItems: 'center',
-}
-
-const headerEyebrowStyle = {
-  fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: 3,
-  color: 'var(--color-blue)',
-  marginBottom: 18,
+  paddingTop: 'clamp(40px,6vw,80px)',
+  paddingBottom: 'clamp(32px,4vw,56px)',
 }
 
 const headerTitleStyle = {
@@ -37,11 +28,7 @@ const headerImageWrapStyle = { border: '2px solid var(--color-navy)', overflow: 
 
 const imageStyle = { display: 'block', width: '100%', height: '100%', objectFit: 'cover' }
 
-const catalogSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '0 clamp(20px,4vw,48px) clamp(40px,6vw,72px)',
-}
+const catalogSectionStyle = { paddingBottom: 'clamp(40px,6vw,72px)' }
 
 const catalogHeaderStyle = {
   display: 'flex',
@@ -70,11 +57,7 @@ const productDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-
 
 const productPriceStyle = { fontSize: 16, fontWeight: 800, color: 'var(--color-blue)', textAlign: 'right' }
 
-const lightingSectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: '0 clamp(20px,4vw,48px) clamp(48px,7vw,96px)',
-}
+const lightingSectionStyle = { paddingBottom: 'clamp(48px,7vw,96px)' }
 
 const lightingImageWrapStyle = { border: '2px solid var(--color-navy)', borderTop: 'none', overflow: 'hidden', height: 280 }
 
@@ -94,13 +77,12 @@ const lightingDescStyle = { fontSize: 13, lineHeight: 1.65, color: 'var(--color-
 const warrantySectionStyle = { background: 'var(--color-navy)', color: '#fff' }
 
 const warrantyInnerStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(36px,5vw,64px) clamp(20px,4vw,48px)',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,260px),1fr))',
   gap: 32,
   alignItems: 'center',
+  paddingTop: 'clamp(36px,5vw,64px)',
+  paddingBottom: 'clamp(36px,5vw,64px)',
 }
 
 const warrantyImageWrapStyle = { border: '2px solid rgba(255,255,255,.2)', overflow: 'hidden', height: 180 }
@@ -114,9 +96,9 @@ const warrantyTextStyle = { fontSize: 14, lineHeight: 1.8, color: 'var(--color-t
 function Products() {
   return (
     <div>
-      <div style={headerSectionStyle}>
+      <div className="container" style={headerSectionStyle}>
         <div>
-          <div style={headerEyebrowStyle}>OUR PRODUCTS — BUY OR RENT</div>
+          <div className="eyebrow">OUR PRODUCTS — BUY OR RENT</div>
           <h1 style={headerTitleStyle}>Trusted brands, company warranty.</h1>
           <p style={headerParagraphStyle}>
             Professional systems from JBL, Yamaha, Dynacord and Shure, plus lighting controllers from Tiger Touch,
@@ -129,13 +111,13 @@ function Products() {
         </div>
       </div>
 
-      <div style={catalogSectionStyle}>
+      <div className="container" style={catalogSectionStyle}>
         <div style={catalogHeaderStyle}>
           <h2 style={catalogHeadingStyle}>Sound Systems</h2>
           <span style={catalogTagStyle}>JBL · YAMAHA · DYNACORD · SHURE</span>
         </div>
         {soundProducts.map((product) => (
-          <div key={product.name} style={productRowStyle}>
+          <div key={product.name} className="product-row" style={productRowStyle}>
             <div style={productNameStyle}>{product.name}</div>
             <div style={productDescStyle}>{product.desc}</div>
             <div style={productPriceStyle}>{product.price}</div>
@@ -143,7 +125,7 @@ function Products() {
         ))}
       </div>
 
-      <div style={lightingSectionStyle}>
+      <div className="container" style={lightingSectionStyle}>
         <div style={catalogHeaderStyle}>
           <h2 style={catalogHeadingStyle}>Lighting Systems</h2>
           <span style={catalogTagStyle}>TIGER TOUCH · SUNNY · KING · QUARTZ</span>
@@ -162,7 +144,7 @@ function Products() {
       </div>
 
       <div style={warrantySectionStyle}>
-        <div style={warrantyInnerStyle}>
+        <div className="container" style={warrantyInnerStyle}>
           <div style={warrantyImageWrapStyle}>
             <img src={speakers33Img} alt="33 years of JAD Studio" style={imageStyle} />
           </div>

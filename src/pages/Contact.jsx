@@ -11,21 +11,12 @@ const TOPICS = [
 ]
 
 const sectionStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(48px,7vw,96px)',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))',
   gap: 'clamp(36px,5vw,72px)',
   alignItems: 'start',
-}
-
-const eyebrowStyle = {
-  fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: 3,
-  color: 'var(--color-blue)',
-  marginBottom: 18,
+  paddingTop: 'clamp(40px,6vw,80px)',
+  paddingBottom: 'clamp(48px,7vw,96px)',
 }
 
 const titleStyle = {
@@ -101,18 +92,6 @@ const fieldWrapStyle = { display: 'flex', flexDirection: 'column', gap: 7 }
 
 const labelStyle = { fontSize: 11.5, fontWeight: 700, letterSpacing: 1, color: 'var(--color-text-muted-2)' }
 
-const inputStyle = {
-  padding: '13px 14px',
-  border: '1.5px solid rgba(16,28,61,.3)',
-  background: 'var(--color-bg)',
-  fontFamily: "'Poppins',sans-serif",
-  fontSize: 14,
-  color: 'var(--color-navy)',
-  outline: 'none',
-}
-
-const textareaStyle = { ...inputStyle, resize: 'vertical' }
-
 const topicsWrapStyle = { display: 'flex', flexWrap: 'wrap', gap: 10 }
 
 const chipBaseStyle = {
@@ -133,18 +112,6 @@ const chipOffStyle = {
 }
 
 const errorTextStyle = { fontSize: 13, fontWeight: 600, color: 'var(--color-error)' }
-
-const submitButtonStyle = {
-  padding: '16px 34px',
-  background: 'var(--color-blue)',
-  color: '#fff',
-  border: 'none',
-  fontFamily: "'Poppins',sans-serif",
-  fontSize: 14.5,
-  fontWeight: 700,
-  cursor: 'pointer',
-  width: 'fit-content',
-}
 
 function Contact() {
   const [name, setName] = useState('')
@@ -176,9 +143,9 @@ function Contact() {
   }
 
   return (
-    <div style={sectionStyle}>
+    <div className="container" style={sectionStyle}>
       <div>
-        <div style={eyebrowStyle}>CONTACT</div>
+        <div className="eyebrow">CONTACT</div>
         <h1 style={titleStyle}>Tell us about your event or venue.</h1>
         <p style={introStyle}>
           A quote, a site visit, or a full production plan — we'll get back to you within one business day.
@@ -238,7 +205,7 @@ function Contact() {
                     setError(false)
                   }}
                   placeholder="Your name"
-                  style={inputStyle}
+                  className="field-input"
                 />
               </div>
               <div style={fieldWrapStyle}>
@@ -250,7 +217,7 @@ function Contact() {
                     setError(false)
                   }}
                   placeholder="+971 …"
-                  style={inputStyle}
+                  className="field-input"
                 />
               </div>
             </div>
@@ -279,11 +246,11 @@ function Contact() {
                 onChange={(event) => setMessage(event.target.value)}
                 rows={4}
                 placeholder="Event date, venue, audience size, or what you'd like installed…"
-                style={textareaStyle}
+                className="field-input"
               />
             </div>
             {error && <div style={errorTextStyle}>Please fill in your name and phone number.</div>}
-            <button type="button" onClick={handleSubmit} style={submitButtonStyle}>
+            <button type="button" onClick={handleSubmit} className="btn-submit">
               Send request →
             </button>
           </div>

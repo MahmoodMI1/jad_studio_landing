@@ -1,15 +1,6 @@
 const wrapStyle = {
-  maxWidth: 'var(--content-max-width)',
-  margin: '0 auto',
-  padding: 'clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(32px,4vw,56px)',
-}
-
-const eyebrowStyle = {
-  fontSize: 13,
-  fontWeight: 700,
-  letterSpacing: 3,
-  color: 'var(--color-blue)',
-  marginBottom: 18,
+  paddingTop: 'clamp(40px,6vw,80px)',
+  paddingBottom: 'clamp(32px,4vw,56px)',
 }
 
 const titleStyle = {
@@ -32,8 +23,8 @@ const descriptionStyle = {
 
 function SectionHeader({ eyebrow, title, description, titleSize, titleMaxWidth, descriptionMaxWidth }) {
   return (
-    <div style={wrapStyle}>
-      <div style={eyebrowStyle}>{eyebrow}</div>
+    <div className="container" style={wrapStyle}>
+      <div className="eyebrow">{eyebrow}</div>
       <h1
         style={{
           ...titleStyle,

@@ -56,18 +56,6 @@ const desktopLinksStyle = {
   fontWeight: 600,
 }
 
-const linkBaseStyle = { color: 'var(--color-text-muted)' }
-const linkActiveStyle = { color: 'var(--color-blue)' }
-
-const quoteButtonStyle = {
-  display: 'inline-block',
-  padding: '11px 24px',
-  background: 'var(--color-blue)',
-  color: '#fff',
-  fontWeight: 700,
-  fontSize: 13,
-}
-
 const mobileWrapStyle = { display: 'flex', alignItems: 'center' }
 
 const hamburgerStyle = {
@@ -128,12 +116,12 @@ function NavBar() {
             key={link.to}
             to={link.to}
             end={link.to === '/'}
-            style={({ isActive }) => (isActive ? linkActiveStyle : linkBaseStyle)}
+            className={({ isActive }) => `nav-link${isActive ? ' nav-link--active' : ''}`}
           >
             {link.label}
           </NavLink>
         ))}
-        <Link to="/contact" style={quoteButtonStyle}>
+        <Link to="/contact" className="btn-quote">
           Get a Quote
         </Link>
       </div>
