@@ -167,3 +167,11 @@
 .contact-value-link:hover {
   color: var(--color-blue);
 }
+
+.social-icon {
+  display: flex;
+  color: var(--color-text-footer);
+}
+.social-icon:hover {
+  color: #fff;
+}
