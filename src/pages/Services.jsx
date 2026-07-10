@@ -128,7 +128,7 @@ function Services() {
       <SectionHeader
         eyebrow="WHAT WE DO"
         title="Complete technical production, under one roof."
-        description="From first site survey to the final soundcheck — supply, installation, programming and live operation. If we don't have it, we'll source it for you."
+        description="From first site survey to the final soundcheck: supply, installation, programming and live operation. If we don't have it, we'll source it for you."
       />
 
       <div className="container" style={listSectionStyle}>
@@ -148,7 +148,7 @@ function Services() {
           <div style={engineeringListStyle}>
             {engineeringItems.map((item) => (
               <div key={item} style={engineeringItemStyle}>
-                <span style={engineeringBulletStyle}>—</span>
+                <span style={engineeringBulletStyle}>•</span>
                 <span>{item}</span>
               </div>
             ))}

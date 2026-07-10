@@ -254,7 +254,7 @@ function Contact() {
         <div className="eyebrow">CONTACT</div>
         <h1 style={titleStyle}>Tell us about your event or venue.</h1>
         <p style={introStyle}>
-          A quote, a site visit, or a full production plan — we'll get back to you within one business day.
+          A quote, a site visit, or a full production plan. We'll get back to you within one business day.
         </p>
         <div style={cardsWrapStyle}>
           <div className="jad-lift" style={contactCardStyle}>
@@ -309,7 +309,7 @@ function Contact() {
             <div style={checkIconStyle}>✓</div>
             <div style={successTitleStyle}>Request received.</div>
             <div style={successTextStyle}>
-              Thank you — we'll get back to you within one business day. For urgent bookings, call{' '}
+              Thank you. We'll get back to you within one business day. For urgent bookings, call{' '}
               <a href="tel:+971509941041" style={successLinkStyle}>
                 +971 50 994 1041
               </a>

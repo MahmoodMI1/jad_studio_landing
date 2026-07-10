@@ -2,7 +2,7 @@ export const services = [
   {
     num: '01',
     title: 'Professional Sound Systems',
-    desc: 'Supply and installation of JBL, Yamaha, Dynacord and Shure systems — amplifiers, mixers, speakers and wireless mics.',
+    desc: 'Supply and installation of JBL, Yamaha, Dynacord and Shure systems, including amplifiers, mixers, speakers and wireless mics.',
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80',
     alt: 'Professional Sound Systems',
@@ -10,7 +10,7 @@ export const services = [
   {
     num: '02',
     title: 'Professional Lighting',
-    desc: 'Distinctive visual atmosphere with Tiger Touch, Sunny, King and Quartz controllers — full DMX512 show control.',
+    desc: 'Distinctive visual atmosphere with Tiger Touch, Sunny, King and Quartz controllers, with full DMX512 show control.',
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80',
     alt: 'Professional Lighting',
@@ -26,7 +26,7 @@ export const services = [
   {
     num: '04',
     title: 'Recording, Editing & Composing',
-    desc: 'Professional composing and recording for all types of music, across every field — with studio-grade editing.',
+    desc: 'Professional composing and recording for all types of music, across every field, with studio-grade editing.',
     variant: 'image',
     img: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600&q=80',
     alt: 'Recording, Editing and Composing',

@@ -100,16 +100,16 @@ function Products() {
     <div>
       <div className="container jad-reveal" style={headerSectionStyle}>
         <div>
-          <div className="eyebrow">OUR PRODUCTS — BUY OR RENT</div>
+          <div className="eyebrow">OUR PRODUCTS: BUY OR RENT</div>
           <h1 style={headerTitleStyle}>Trusted brands, company warranty.</h1>
           <p style={headerParagraphStyle}>
             Professional systems from JBL, Yamaha, Dynacord and Shure, plus lighting controllers from Tiger Touch,
-            Sunny, King and Quartz. This catalog highlights core products but is not limited to what's shown — if
+            Sunny, King and Quartz. This catalog highlights core products but is not limited to what's shown. If
             you need it, we can supply it or source it for you.
           </p>
         </div>
         <div style={headerImageWrapStyle}>
-          <img src={gearImg} alt="JAD Studio full production rig — line arrays, mixer and moving heads" style={imageStyle} />
+          <img src={gearImg} alt="JAD Studio full production rig with line arrays, mixer and moving heads" style={imageStyle} />
         </div>
       </div>
 

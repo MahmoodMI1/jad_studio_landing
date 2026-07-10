@@ -53,7 +53,7 @@ function Events() {
       <SectionHeader
         eyebrow="EVENTS WE SERVICE"
         title="From weddings to multi-stage festivals."
-        description="We've installed lighting and audio systems for restaurants, wedding venues, concert stages, corporate spaces and private events — delivering professional sound and immersive lighting every time."
+        description="We've installed lighting and audio systems for restaurants, wedding venues, concert stages, corporate spaces and private events, delivering professional sound and immersive lighting every time."
       />
 
       <div className="container" style={gridSectionStyle}>
