@@ -1,5 +1,185 @@
+import CTABand from '../components/CTABand'
+import { soundProducts, lightingProducts } from '../data/products'
+import gearImg from '../assets/gear-showcase.jpg'
+import lightingImg from '../assets/lighting-rig.jpg'
+import speakers33Img from '../assets/speakers-33.jpg'
+
+const headerSectionStyle = {
+  maxWidth: 'var(--content-max-width)',
+  margin: '0 auto',
+  padding: 'clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(32px,4vw,56px)',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))',
+  gap: 'clamp(28px,4vw,56px)',
+  alignItems: 'center',
+}
+
+const headerEyebrowStyle = {
+  fontSize: 13,
+  fontWeight: 700,
+  letterSpacing: 3,
+  color: 'var(--color-blue)',
+  marginBottom: 18,
+}
+
+const headerTitleStyle = {
+  margin: '0 0 24px',
+  fontSize: 'clamp(32px,5.2vw,54px)',
+  fontWeight: 800,
+  lineHeight: 1.06,
+  letterSpacing: '-1.5px',
+  textWrap: 'balance',
+}
+
+const headerParagraphStyle = { margin: 0, fontSize: 16, lineHeight: 1.75, color: 'var(--color-text-muted)', maxWidth: 640 }
+
+const headerImageWrapStyle = { border: '2px solid var(--color-navy)', overflow: 'hidden', height: 340 }
+
+const imageStyle = { display: 'block', width: '100%', height: '100%', objectFit: 'cover' }
+
+const catalogSectionStyle = {
+  maxWidth: 'var(--content-max-width)',
+  margin: '0 auto',
+  padding: '0 clamp(20px,4vw,48px) clamp(40px,6vw,72px)',
+}
+
+const catalogHeaderStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'baseline',
+  borderBottom: '2px solid var(--color-navy)',
+  paddingBottom: 14,
+}
+
+const catalogHeadingStyle = { margin: 0, fontSize: 26, fontWeight: 800, letterSpacing: '-.5px' }
+
+const catalogTagStyle = { fontSize: 12, fontWeight: 600, letterSpacing: 1.5, color: 'var(--color-text-muted-2)' }
+
+const productRowStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,210px),1fr))',
+  gap: '10px 32px',
+  padding: '26px 8px',
+  borderBottom: '1px solid rgba(16,28,61,.15)',
+  alignItems: 'baseline',
+}
+
+const productNameStyle = { fontSize: 17, fontWeight: 700 }
+
+const productDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-text-muted)' }
+
+const productPriceStyle = { fontSize: 16, fontWeight: 800, color: 'var(--color-blue)', textAlign: 'right' }
+
+const lightingSectionStyle = {
+  maxWidth: 'var(--content-max-width)',
+  margin: '0 auto',
+  padding: '0 clamp(20px,4vw,48px) clamp(48px,7vw,96px)',
+}
+
+const lightingImageWrapStyle = { border: '2px solid var(--color-navy)', borderTop: 'none', overflow: 'hidden', height: 280 }
+
+const lightingGridStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))',
+  gap: 28,
+  paddingTop: 28,
+}
+
+const lightingCardStyle = { border: '2px solid var(--color-navy)', background: '#fff', padding: '24px 24px 26px' }
+
+const lightingNameStyle = { fontSize: 16, fontWeight: 700, marginBottom: 8 }
+
+const lightingDescStyle = { fontSize: 13, lineHeight: 1.65, color: 'var(--color-text-muted)' }
+
+const warrantySectionStyle = { background: 'var(--color-navy)', color: '#fff' }
+
+const warrantyInnerStyle = {
+  maxWidth: 'var(--content-max-width)',
+  margin: '0 auto',
+  padding: 'clamp(36px,5vw,64px) clamp(20px,4vw,48px)',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,260px),1fr))',
+  gap: 32,
+  alignItems: 'center',
+}
+
+const warrantyImageWrapStyle = { border: '2px solid rgba(255,255,255,.2)', overflow: 'hidden', height: 180 }
+
+const warrantyHeadingStyle = { fontSize: 28, fontWeight: 800, lineHeight: 1.3, letterSpacing: '-.5px', textWrap: 'balance' }
+
+const warrantyAccentStyle = { color: 'var(--color-blue-accent)' }
+
+const warrantyTextStyle = { fontSize: 14, lineHeight: 1.8, color: 'var(--color-text-on-dark-muted)' }
+
 function Products() {
-  return <div style={{ padding: 48 }}>Products page coming soon.</div>
+  return (
+    <div>
+      <div style={headerSectionStyle}>
+        <div>
+          <div style={headerEyebrowStyle}>OUR PRODUCTS — BUY OR RENT</div>
+          <h1 style={headerTitleStyle}>Trusted brands, company warranty.</h1>
+          <p style={headerParagraphStyle}>
+            Professional systems from JBL, Yamaha, Dynacord and Shure, plus lighting controllers from Tiger Touch,
+            Sunny, King and Quartz. This catalog highlights core products but is not limited to what's shown — if
+            you need it, we can supply it or source it for you.
+          </p>
+        </div>
+        <div style={headerImageWrapStyle}>
+          <img src={gearImg} alt="JAD Studio full production rig — line arrays, mixer and moving heads" style={imageStyle} />
+        </div>
+      </div>
+
+      <div style={catalogSectionStyle}>
+        <div style={catalogHeaderStyle}>
+          <h2 style={catalogHeadingStyle}>Sound Systems</h2>
+          <span style={catalogTagStyle}>JBL · YAMAHA · DYNACORD · SHURE</span>
+        </div>
+        {soundProducts.map((product) => (
+          <div key={product.name} style={productRowStyle}>
+            <div style={productNameStyle}>{product.name}</div>
+            <div style={productDescStyle}>{product.desc}</div>
+            <div style={productPriceStyle}>{product.price}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={lightingSectionStyle}>
+        <div style={catalogHeaderStyle}>
+          <h2 style={catalogHeadingStyle}>Lighting Systems</h2>
+          <span style={catalogTagStyle}>TIGER TOUCH · SUNNY · KING · QUARTZ</span>
+        </div>
+        <div style={lightingImageWrapStyle}>
+          <img src={lightingImg} alt="Moving heads and LED screen lighting rig" style={imageStyle} />
+        </div>
+        <div style={lightingGridStyle}>
+          {lightingProducts.map((item) => (
+            <div key={item.name} style={lightingCardStyle}>
+              <div style={lightingNameStyle}>{item.name}</div>
+              <div style={lightingDescStyle}>{item.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div style={warrantySectionStyle}>
+        <div style={warrantyInnerStyle}>
+          <div style={warrantyImageWrapStyle}>
+            <img src={speakers33Img} alt="33 years of JAD Studio" style={imageStyle} />
+          </div>
+          <div style={warrantyHeadingStyle}>
+            Every device carries a <span style={warrantyAccentStyle}>one-year company warranty.</span>
+          </div>
+          <div style={warrantyTextStyle}>
+            Coverage includes manufacturing defects and damage to the operating board and programming. The warranty
+            does not cover usage errors, breakage, liquid spills or power-supply fluctuations. Annual maintenance
+            contracts are available after the warranty ends.
+          </div>
+        </div>
+      </div>
+
+      <CTABand heading="Ask for current stock and rental rates." primary={{ href: '/contact', label: 'Request the price list →' }} />
+    </div>
+  )
 }
 
 export default Products
