@@ -43,10 +43,12 @@ textarea::placeholder {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 10px;
+    gap: 14px !important;
+    scroll-padding-left: 2px;
   }
 
   .jad-hcard {
-    flex: 0 0 82%;
+    flex: 0 0 76%;
     scroll-snap-align: start;
   }
 }
