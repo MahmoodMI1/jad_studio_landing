@@ -12,6 +12,41 @@ const TOPICS = [
   'Buy / rent gear',
 ]
 
+const NAME_MAX_LENGTH = 80
+const PHONE_MAX_LENGTH = 20
+const MESSAGE_MAX_LENGTH = 500
+const NAME_PATTERN = /^[\p{L}\p{M}\s'-]+$/u
+const PHONE_PATTERN = /^[+\d\s()-]+$/
+
+function getNameError(name) {
+  const trimmed = name.trim()
+  if (!trimmed) {
+    return 'Please enter your name.'
+  }
+  if (trimmed.length < 2) {
+    return 'Please enter your full name.'
+  }
+  if (!NAME_PATTERN.test(trimmed)) {
+    return 'Only letters, spaces, hyphens and apostrophes allowed.'
+  }
+  return ''
+}
+
+function getPhoneError(phone) {
+  const trimmed = phone.trim()
+  if (!trimmed) {
+    return 'Please enter your phone number.'
+  }
+  if (!PHONE_PATTERN.test(trimmed)) {
+    return 'Only digits, spaces, +, - and parentheses allowed.'
+  }
+  const digitCount = trimmed.replace(/\D/g, '').length
+  if (digitCount < 7 || digitCount > 15) {
+    return 'Please enter a valid phone number.'
+  }
+  return ''
+}
+
 const sectionStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))',
@@ -148,13 +183,16 @@ const chipOffStyle = {
 
 const errorTextStyle = { fontSize: 13, fontWeight: 600, color: 'var(--color-error)' }
 
+const fieldErrorTextStyle = { fontSize: 12, fontWeight: 600, color: 'var(--color-error)' }
+
 function Contact() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
   const [selected, setSelected] = useState([])
   const [sent, setSent] = useState(false)
-  const [error, setError] = useState(false)
+  const [nameError, setNameError] = useState('')
+  const [phoneError, setPhoneError] = useState('')
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState(false)
 
@@ -163,11 +201,15 @@ function Contact() {
   }
 
   const handleSubmit = async () => {
-    if (!name.trim() || !phone.trim()) {
-      setError(true)
+    const nextNameError = getNameError(name)
+    const nextPhoneError = getPhoneError(phone)
+    if (nextNameError || nextPhoneError) {
+      setNameError(nextNameError)
+      setPhoneError(nextPhoneError)
       return
     }
-    setError(false)
+    setNameError('')
+    setPhoneError('')
     setSendError(false)
     setSending(true)
     try {
@@ -175,8 +217,8 @@ function Contact() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name,
-          phone,
+          name: name.trim(),
+          phone: phone.trim(),
           topics: selected.length ? selected.join(', ') : 'Not specified',
           message: message.trim() || 'No additional message',
           time: new Date().toLocaleString(),
@@ -195,6 +237,8 @@ function Contact() {
   const handleReset = () => {
     setSent(false)
     setSendError(false)
+    setNameError('')
+    setPhoneError('')
     setName('')
     setPhone('')
     setMessage('')
@@ -282,11 +326,14 @@ function Contact() {
                   value={name}
                   onChange={(event) => {
                     setName(event.target.value)
-                    setError(false)
+                    setNameError('')
                   }}
                   placeholder="Your name"
+                  maxLength={NAME_MAX_LENGTH}
                   className="field-input"
+                  style={nameError ? { borderColor: 'var(--color-error)' } : undefined}
                 />
+                {nameError && <div style={fieldErrorTextStyle}>{nameError}</div>}
               </div>
               <div style={fieldWrapStyle}>
                 <label style={labelStyle}>PHONE *</label>
@@ -294,11 +341,14 @@ function Contact() {
                   value={phone}
                   onChange={(event) => {
                     setPhone(event.target.value)
-                    setError(false)
+                    setPhoneError('')
                   }}
                   placeholder="+971 …"
+                  maxLength={PHONE_MAX_LENGTH}
                   className="field-input"
+                  style={phoneError ? { borderColor: 'var(--color-error)' } : undefined}
                 />
+                {phoneError && <div style={fieldErrorTextStyle}>{phoneError}</div>}
               </div>
             </div>
             <div style={fieldWrapStyle}>
@@ -326,10 +376,10 @@ function Contact() {
                 onChange={(event) => setMessage(event.target.value)}
                 rows={4}
                 placeholder="Event date, venue, audience size, or what you'd like installed…"
+                maxLength={MESSAGE_MAX_LENGTH}
                 className="field-input"
               />
             </div>
-            {error && <div style={errorTextStyle}>Please fill in your name and phone number.</div>}
             {sendError && (
               <div style={errorTextStyle}>
                 Something went wrong sending your request. Please try again, or call us directly.
