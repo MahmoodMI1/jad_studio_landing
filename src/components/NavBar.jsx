@@ -4,9 +4,8 @@ import { Link, NavLink } from 'react-router-dom'
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/services', label: 'Services' },
-  { to: '/products', label: 'Products' },
   { to: '/events', label: 'Events' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/products', label: 'Products' },
 ]
 
 const navWrapStyle = {
@@ -122,7 +121,7 @@ function NavBar() {
           </NavLink>
         ))}
         <Link to="/contact" className="btn-quote">
-          Get a Quote
+          Contact us
         </Link>
       </div>
 
@@ -147,7 +146,7 @@ function NavBar() {
             </Link>
           ))}
           <Link to="/contact" style={mobileQuoteLinkStyle} onClick={closeMenu}>
-            Get a Quote →
+            Contact us →
           </Link>
         </div>
       )}
