@@ -104,6 +104,13 @@
 .btn-submit:hover {
   background: var(--color-blue-hover);
 }
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn-submit:disabled:hover {
+  background: var(--color-blue);
+}
 
 .nav-link {
   color: var(--color-text-muted);

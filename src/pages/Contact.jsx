@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../emailjsConfig'
 
 const TOPICS = [
   'Event production',
@@ -153,22 +155,46 @@ function Contact() {
   const [selected, setSelected] = useState([])
   const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState(false)
 
   const toggleTopic = (topic) => {
     setSelected((prev) => (prev.includes(topic) ? prev.filter((item) => item !== topic) : [...prev, topic]))
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!name.trim() || !phone.trim()) {
       setError(true)
       return
     }
     setError(false)
-    setSent(true)
+    setSendError(false)
+    setSending(true)
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name,
+          phone,
+          topics: selected.length ? selected.join(', ') : 'Not specified',
+          message: message.trim() || 'No additional message',
+          time: new Date().toLocaleString(),
+        },
+        EMAILJS_PUBLIC_KEY,
+      )
+      setSent(true)
+    } catch (err) {
+      console.error('EmailJS send failed:', err)
+      setSendError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const handleReset = () => {
     setSent(false)
+    setSendError(false)
     setName('')
     setPhone('')
     setMessage('')
@@ -304,8 +330,13 @@ function Contact() {
               />
             </div>
             {error && <div style={errorTextStyle}>Please fill in your name and phone number.</div>}
-            <button type="button" onClick={handleSubmit} className="btn-submit">
-              Send request →
+            {sendError && (
+              <div style={errorTextStyle}>
+                Something went wrong sending your request. Please try again, or call us directly.
+              </div>
+            )}
+            <button type="button" onClick={handleSubmit} disabled={sending} className="btn-submit">
+              {sending ? 'Sending…' : 'Send request →'}
             </button>
           </div>
         )}
