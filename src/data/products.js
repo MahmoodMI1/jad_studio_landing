@@ -112,24 +112,53 @@ export const commercialAudio = [
   },
 ]
 
+const ZZOUNDS = 'https://cf1.zzounds.com/media/productmedia/fit%2C2018by3200/quality%2C85/'
+
 export const soundProducts = [
-  { name: 'JBL SRX 712', price: '$300', desc: 'Made in USA · 12-inch two-way (stereo) speaker · 500 W.' },
+  {
+    name: 'JBL SRX 712',
+    price: '$300',
+    desc: 'Made in USA · 12-inch two-way (stereo) speaker · 500 W.',
+    thumb: ZZOUNDS + '712M_image-d4987332775e61b077565d4a832ee62b.jpg',
+  },
   { name: 'JBL SRX 718', price: '$400', desc: 'Made in USA · 15-inch two-way (stereo) speaker · 600 W.' },
-  { name: 'JBL SRX 718 Subwoofer', price: '$550', desc: 'Made in USA · 15-inch subwoofer for deep, controlled low end.' },
-  { name: 'JBL SRX 725', price: '$500', desc: 'Made in USA · dual-driver speaker for stage sides · 1200 W.' },
+  {
+    name: 'JBL SRX 718 Subwoofer',
+    price: '$550',
+    desc: 'Made in USA · 15-inch subwoofer for deep, controlled low end.',
+    thumb: ZZOUNDS + '718S_image-4ad7b4e3def5ad2f933758d3b7257dc3.jpg',
+  },
+  {
+    name: 'JBL SRX 725',
+    price: '$500',
+    desc: 'Made in USA · dual-driver speaker for stage sides · 1200 W.',
+    thumb: ZZOUNDS + '725_image-bfc94c596068569e60926d0f2a935624.jpg',
+  },
   {
     name: 'Yamaha P5000s Amplifier',
     price: 'from $450',
     desc: 'Made in Japan · high-load amplifier · 3000 W ($450) and 5000 W ($650) versions.',
+    thumb: ZZOUNDS + 'p5000s_medium_jpg_clipped-90ea290b8c072cbe11750321c0c20d61.jpg',
   },
   {
     name: 'Shure AXT500 Wireless',
     price: 'from $350',
     desc: '2026 dual wireless system · separate frequency per mic, front-capsule noise blocking, internal auto EQ · 150 m effective range, extendable with booster. Single version $350, dual $500.',
+    thumb: 'https://cf1.zzounds.com/media/productmedia/fit%2C186by186/quality%2C85/BLX288_SM58_Group_Composite_806795-5cdd009ff6baee8c4b1215e5d3dafd7f.jpg',
   },
-  { name: 'Shure PGA-98H', price: '$350', desc: 'Made in USA · wireless microphone for string instruments, with noise suppression.' },
+  {
+    name: 'Shure PGA-98H',
+    price: '$350',
+    desc: 'Made in USA · wireless microphone for string instruments, with noise suppression.',
+    thumb: ZZOUNDS + 'SHUPGA98H-e5b96a25e4b28841870aee2847de00b2.jpg',
+  },
   { name: 'Shure PG-89', price: '$200', desc: 'Made in USA · high-sensitivity microphone for percussion instruments.' },
-  { name: 'Shure SM58', price: '$275', desc: 'Made in USA · the standard for choirs and group vocals.' },
+  {
+    name: 'Shure SM58',
+    price: '$275',
+    desc: 'Made in USA · the standard for choirs and group vocals.',
+    thumb: ZZOUNDS + 'Shure-SM58-LC-1a98b20c9b1076f01cb0eb124dcf920d.jpg',
+  },
   {
     name: 'Dynacord CM Mixers',
     price: 'from $2,500',

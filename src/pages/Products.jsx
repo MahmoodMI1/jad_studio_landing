@@ -20,6 +20,10 @@ function jumpToSection(event, id) {
   window.scrollTo({ top, behavior: 'smooth' })
 }
 
+function productMonogram(name) {
+  return name.split(' ')[0].slice(0, 3).toUpperCase()
+}
+
 const gearImg = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80'
 const lightingImg = 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1600&q=80'
 const speakers33Img = 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1600&q=80'
@@ -148,18 +152,33 @@ const catalogHeadingStyle = { margin: 0, fontSize: 26, fontWeight: 800, letterSp
 
 const catalogTagStyle = { fontSize: 12, fontWeight: 600, letterSpacing: 1.5, color: 'var(--color-text-muted-2)' }
 
-const productRowStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,210px),1fr))',
-  gap: '10px 32px',
-  padding: '26px 8px',
-  borderBottom: '1px solid rgba(16,28,61,.15)',
-  alignItems: 'baseline',
-}
-
 const productNameStyle = { fontSize: 17, fontWeight: 700 }
 
 const productDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-text-muted)' }
+
+const soundRowStyle = {
+  display: 'grid',
+  gridTemplateColumns: '88px repeat(auto-fit,minmax(min(100%,180px),1fr))',
+  gap: '10px 28px',
+  padding: '18px 8px',
+  borderBottom: '1px solid rgba(16,28,61,.15)',
+  alignItems: 'center',
+}
+
+const soundThumbStyle = {
+  width: 88,
+  height: 72,
+  border: '1.5px solid rgba(16,28,61,.25)',
+  background: '#fff',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  overflow: 'hidden',
+}
+
+const soundThumbImageStyle = { width: '100%', height: '100%', objectFit: 'contain' }
+
+const soundThumbMonoStyle = { fontSize: 20, fontWeight: 800, color: '#c3cce4', letterSpacing: 1 }
 
 const lightingSectionStyle = { paddingBottom: 'clamp(48px,7vw,96px)', scrollMarginTop: 110 }
 
@@ -314,7 +333,14 @@ function Products() {
           <span style={catalogTagStyle}>JBL · YAMAHA · DYNACORD · SHURE</span>
         </div>
         {soundProducts.map((product) => (
-          <div key={product.name} className="product-row" style={productRowStyle}>
+          <div key={product.name} className="product-row" style={soundRowStyle}>
+            <div style={soundThumbStyle}>
+              {product.thumb ? (
+                <img src={product.thumb} alt={product.name} style={soundThumbImageStyle} />
+              ) : (
+                <span style={soundThumbMonoStyle}>{productMonogram(product.name)}</span>
+              )}
+            </div>
             <div style={productNameStyle}>{product.name}</div>
             <div style={productDescStyle}>{product.desc}</div>
           </div>

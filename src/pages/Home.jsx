@@ -35,26 +35,39 @@ const pillars = [
 
 const eventsTeaserImg = 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1600&q=80'
 
-const productBrands = [
+const productsTeasers = [
   {
-    name: 'JBL',
-    category: 'SPEAKERS & SUBS',
-    desc: 'SRX series, two-way stereo speakers and subwoofers, 500 to 1200 W.',
+    key: 'photo-booths',
+    img: 'https://profilm.ae/wp-content/uploads/2023/05/Automatic-360-Photo-Booth-Degree-Camera-Video-Spinner-Free-Logo-Photomaton-360-Rotating-Selfie-Machine-for-1-700x700.webp',
+    alt: 'TechnoWhale 360 photo booth in action',
+    eyebrow: 'TECHNOWHALE',
+    badge: 'NEW',
+    title: 'Photo Booths',
+    desc: '360°, mirror and DSLR booths for events.',
   },
   {
-    name: 'Yamaha',
-    category: 'AMPLIFIERS',
-    desc: 'P5000s high-load amplifiers: 3000 W and 5000 W versions.',
+    key: 'live-sound',
+    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&q=80',
+    alt: 'JBL line array rigged on stage',
+    eyebrow: 'JBL · YAMAHA · SHURE · DYNACORD',
+    title: 'Live Sound',
+    desc: 'Speakers, subs, amplifiers, wireless mics and mixers.',
   },
   {
-    name: 'Shure',
-    category: 'MICROPHONES',
-    desc: 'AXT500 wireless systems, SM58 vocal mics, instrument mics.',
+    key: 'commercial-audio',
+    img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80',
+    alt: 'Restaurant interior with background music',
+    eyebrow: 'SHOPS · RESTAURANTS · CAFÉS',
+    title: 'Commercial Audio',
+    desc: 'Ceiling speakers and smart background music control.',
   },
   {
-    name: 'Dynacord',
-    category: 'MIXERS',
-    desc: 'CM series, 10 to 34 channels, made in Germany.',
+    key: 'lighting',
+    img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80',
+    alt: 'Moving-head show lighting',
+    eyebrow: 'DMX512 SHOW CONTROL',
+    title: 'Lighting',
+    desc: 'Tiger Touch, Sunny, King and Quartz controllers, moving heads and LED.',
   },
 ]
 
@@ -297,21 +310,36 @@ const productsTeaserGridStyle = {
   gap: 22,
 }
 
-const productBrandCardStyle = {
+const productsTeaserCardStyle = {
+  position: 'relative',
   border: '2px solid var(--color-navy)',
-  background: '#fff',
-  padding: '26px 24px 28px',
+  minHeight: 280,
+  overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
-  gap: 10,
-  color: 'var(--color-navy)',
+  justifyContent: 'flex-end',
+  color: '#fff',
 }
 
-const productBrandNameStyle = { fontSize: 26, fontWeight: 800, letterSpacing: '-.5px' }
+const productsTeaserCardImgStyle = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
 
-const productBrandCategoryStyle = { fontSize: 12, fontWeight: 700, letterSpacing: 1.5, color: 'var(--color-blue)' }
+const productsTeaserCardOverlayStyle = {
+  position: 'absolute',
+  inset: 0,
+  background: 'linear-gradient(0deg, rgba(9,16,38,.94) 0%, rgba(9,16,38,.4) 50%, rgba(9,16,38,.05) 100%)',
+}
 
-const productBrandDescStyle = { fontSize: 13, lineHeight: 1.65, color: 'var(--color-text-muted)' }
+const productsTeaserCardBodyStyle = { position: 'relative', padding: '20px 20px 22px', display: 'flex', flexDirection: 'column', gap: 6 }
+
+const productsTeaserCardEyebrowRowStyle = { display: 'flex', alignItems: 'center', gap: 8 }
+
+const productsTeaserCardEyebrowStyle = { fontSize: 11, fontWeight: 800, letterSpacing: 1.5, color: 'var(--color-blue-accent)' }
+
+const productsTeaserCardBadgeStyle = { padding: '2px 8px', background: 'var(--color-blue)', color: '#fff', fontSize: 9, fontWeight: 800, letterSpacing: 1.5 }
+
+const productsTeaserCardTitleStyle = { fontSize: 19, fontWeight: 700 }
+
+const productsTeaserCardDescStyle = { fontSize: 12.5, lineHeight: 1.6, color: 'var(--color-text-on-dark)' }
 
 const productsTeaserNoteStyle = { marginTop: 24, fontSize: 13, fontWeight: 600, color: 'var(--color-text-muted-2)' }
 
@@ -443,16 +471,23 @@ function Home() {
           </Link>
         </div>
         <div className="jad-hrow" style={productsTeaserGridStyle}>
-          {productBrands.map((brand) => (
+          {productsTeasers.map((teaser) => (
             <Link
-              key={brand.name}
+              key={teaser.key}
               to="/products"
-              className="jad-hcard jad-lift jad-reveal"
-              style={productBrandCardStyle}
+              className="jad-hcard jad-zoomcard jad-reveal"
+              style={productsTeaserCardStyle}
             >
-              <div style={productBrandNameStyle}>{brand.name}</div>
-              <div style={productBrandCategoryStyle}>{brand.category}</div>
-              <div style={productBrandDescStyle}>{brand.desc}</div>
+              <img src={teaser.img} alt={teaser.alt} style={productsTeaserCardImgStyle} />
+              <div style={productsTeaserCardOverlayStyle} />
+              <div style={productsTeaserCardBodyStyle}>
+                <div style={productsTeaserCardEyebrowRowStyle}>
+                  <span style={productsTeaserCardEyebrowStyle}>{teaser.eyebrow}</span>
+                  {teaser.badge && <span style={productsTeaserCardBadgeStyle}>{teaser.badge}</span>}
+                </div>
+                <div style={productsTeaserCardTitleStyle}>{teaser.title}</div>
+                <div style={productsTeaserCardDescStyle}>{teaser.desc}</div>
+              </div>
             </Link>
           ))}
         </div>
