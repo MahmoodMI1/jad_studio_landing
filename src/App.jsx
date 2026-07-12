@@ -20,7 +20,9 @@ function Layout() {
   return (
     <>
       <NavBar onSameRouteClick={() => setReplayKey((key) => key + 1)} />
-      <Outlet key={`${location.pathname}-${replayKey}`} />
+      <div style={{ flex: 1 }}>
+        <Outlet key={`${location.pathname}-${replayKey}`} />
+      </div>
       <Footer bordered={isHome} />
     </>
   )
