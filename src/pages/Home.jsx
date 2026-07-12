@@ -474,7 +474,7 @@ function Home() {
           {productsTeasers.map((teaser) => (
             <Link
               key={teaser.key}
-              to="/products"
+              to={`/products#${teaser.key}`}
               className="jad-hcard jad-zoomcard jad-reveal"
               style={productsTeaserCardStyle}
             >

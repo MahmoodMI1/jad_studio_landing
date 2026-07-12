@@ -14,8 +14,16 @@ function Layout() {
   const [replayKey, setReplayKey] = useState(0)
 
   useEffect(() => {
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1))
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 110
+        window.scrollTo({ top, left: 0, behavior: 'instant' })
+        return
+      }
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-  }, [location.pathname])
+  }, [location.pathname, location.hash])
 
   return (
     <>
