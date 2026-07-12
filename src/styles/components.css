@@ -188,3 +188,14 @@
   background: var(--color-navy);
   color: #fff;
 }
+
+.jad-gallery-thumb:hover {
+  border-color: var(--color-blue);
+}
+
+.category-nav-link {
+  color: var(--color-navy);
+}
+.category-nav-link:hover {
+  color: var(--color-blue);
+}
