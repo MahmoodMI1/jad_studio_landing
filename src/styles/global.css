@@ -1,6 +1,5 @@
 html {
   scroll-behavior: smooth;
-  overscroll-behavior-y: none;
 }
 
 body {
@@ -9,7 +8,6 @@ body {
   background: var(--color-bg);
   font-family: var(--font-family);
   color: var(--color-text);
-  overscroll-behavior-y: none;
 }
 
 #root {
