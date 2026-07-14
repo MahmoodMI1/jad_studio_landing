@@ -158,12 +158,14 @@ const productDescStyle = { fontSize: 13.5, lineHeight: 1.7, color: 'var(--color-
 
 const soundRowStyle = {
   display: 'grid',
-  gridTemplateColumns: '88px repeat(auto-fit,minmax(min(100%,180px),1fr))',
+  gridTemplateColumns: '88px 1fr',
   gap: '10px 28px',
   padding: '18px 8px',
   borderBottom: '1px solid rgba(16,28,61,.15)',
   alignItems: 'center',
 }
+
+const soundInfoStyle = { display: 'flex', flexDirection: 'column', gap: 4 }
 
 const soundThumbStyle = {
   width: 88,
@@ -341,8 +343,10 @@ function Products() {
                 <span style={soundThumbMonoStyle}>{productMonogram(product.name)}</span>
               )}
             </div>
-            <div style={productNameStyle}>{product.name}</div>
-            <div style={productDescStyle}>{product.desc}</div>
+            <div style={soundInfoStyle}>
+              <div style={productNameStyle}>{product.name}</div>
+              <div style={productDescStyle}>{product.desc}</div>
+            </div>
           </div>
         ))}
       </div>
